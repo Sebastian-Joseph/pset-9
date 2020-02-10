@@ -34,13 +34,6 @@ function init() {
   render();
 };
 
-function pickTurnX() {
-
-};
-
-function pickTurnO() {
-
-}
 
 function render() {
   board.forEach(function(mark, index) {
