@@ -76,3 +76,31 @@ function diagonalWinCheck() {
     }
   }
 }
+
+function end(winningPlayer) {
+  for (let col = 0; col < 7; col++) {
+    for (let row = 0; row < 7; row++) {
+      $('h1').text(winningPlayer+" has won! Refresh your browser to play again").css("fontSize", "50px")
+    }
+  }
+}
+
+let currentPlayer = 1;
+let currentName = player1;
+let currentColor = player1Color;
+
+$('h3').text(player1+": it is your turn");
+$('.board button').on('click', function() {
+  let col = $(this).closest("td").index();
+  let bottomAvail = checkBottom(col);
+  changeColor(bottomAvail, col, currentColor);
+
+if (horizontalWinCheck() || verticalWin() || diagonalWinCheck()) {
+  end(currentName);
+
+}
+
+currentPlayer = currentPlayer * -1;
+
+if (currentPlayer)
+})
