@@ -14,11 +14,11 @@ function reportWin(rowNum, colNum) {
 }
 
 function changeColor(rowIndex, colIndex, color) {
-  return
+  return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color', color);
 }
 
 function returnColor(rowIndex, colIndex, color) {
-  return
+  return  table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color');
 }
 
 function checkBottom(colIndex) {
@@ -102,5 +102,13 @@ if (horizontalWinCheck() || verticalWin() || diagonalWinCheck()) {
 
 currentPlayer = currentPlayer * -1;
 
-if (currentPlayer)
+if (currentPlayer === 1) {
+  currentName = player1;
+  $('h3').text(currentName+": it is your turn");
+  currentColr = player1Color;
+} else {
+  currentName = player2;
+  $('h3').text(currentName+": it is your turn");
+  currentColor = player2Color;
+}
 })
