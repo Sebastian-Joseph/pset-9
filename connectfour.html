@@ -1,62 +1,56 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title> APCSP Connect Four </title>
-  <link href="css/connectfour.css" rel="stylesheet" type="text/css" />
-  <script src="js/connectfour.js"> </script>
-  </head>
+<meta charset="utf-8">
+<title>Connect 4</title>
+<link rel="stylesheet" href="css/connectfour.css">
+<script src="js/connectfour.js" defer></script>
+</head>
+<body>
+	<h1 id="turn">Player 1's Turn</h1>
+<div>
 
-  <body>
-    <div class="container" align='center'>
-      <h1> Welcome to Connect Four </h1>
-      <h2> Link 4 chips to win </h2>
-      <h3> Start </h3>
+</div>
+<div>
 
-      <table class="board">
-        <tr>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-        </tr>
-        <tr>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-        </tr><tr>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-        </tr><tr>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-        </tr><tr>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-        </tr><tr>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-          <td> <button type="button"> </button>
-        </tr>
-        </table>
-        </div>
+</div>
+<div>
+  <span class="square" id="28" value="empty" onClick="changeColor(28)"></span>
+  <span class="square" id="27" value="empty" onClick="changeColor(27)"></span>
+	<span class="square" id="26" value="empty" onClick="changeColor(26)"></span>
+	<span class="square" id="25" value="empty" onClick="changeColor(25)"></span>
+	<span class="square" id="24" value="empty" onClick="changeColor(24)"></span>
+	<span class="square" id="23" value="empty" onClick="changeColor(23)"></span>
+	<span class="square" id="22" value="empty" onClick="changeColor(22)"></span>
+</div>
+<div>
+  <span class="square" id="21" value="empty" onClick="changeColor(21)"></span>
+  <span class="square" id="20" value="empty" onClick="changeColor(20)"></span>
+	<span class="square" id="19" value="empty" onClick="changeColor(19)"></span>
+	<span class="square" id="18" value="empty" onClick="changeColor(18)"></span>
+	<span class="square" id="17" value="empty" onClick="changeColor(17)"></span>
+	<span class="square" id="16" value="empty" onClick="changeColor(16)"></span>
+	<span class="square" id="15" value="empty" onClick="changeColor(15)"></span>
+</div>
+<div>
+<span class="square" id="14" value="empty" onClick="changeColor(14)"></span>
+<span class="square" id="13" value="empty" onClick="changeColor(13)"></span>
+<span class="square" id="12" value="empty" onClick="changeColor(12)"></span>
+<span class="square" id="11" value="empty" onClick="changeColor(11)"></span>
+<span class="square" id="10" value="empty" onClick="changeColor(10)"></span>
+<span class="square" id="9" value="empty" onClick="changeColor(9)"></span>
+<span class="square" id="8" value="empty" onClick="changeColor(8)"></span>
+</div>
+	<div>
+  <span class="square" id="7" value="empty" onClick="changeColor(7)"></span>
+  <span class="square" id="6" value="empty" onClick="changeColor(6)"></span>
+	<span class="square" id="5" value="empty" onClick="changeColor(5)"></span>
+	<span class="square" id="4" value="empty" onClick="changeColor(4)"></span>
+	<span class="square" id="3" value="empty" onClick="changeColor(3)"></span>
+	<span class="square" id="2" value="empty" onClick="changeColor(2)"></span>
+	<span class="square" id="1" value="empty" onClick="changeColor(1)"></span>
+
+</div>
+<h3 id="message"></h3>
+</body>
+</html>

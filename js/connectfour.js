@@ -1,114 +1,123 @@
-let player1 = prompt("Player One: Enter Your Name , you will be Blue");
-let player1color = 'rgb(86, 151, 255)';
+// JavaScript Document
+var pColor = "red";
+var player1 = true;
+var win1 = false;
+var win2 = false;
 
-let player2 = prompt("Player Two: Enter Your Name, you will be Red");
-let player2color = 'rgb(237, 45, 73)';
+//Creates variable to hold objects of the square class
+var square = document.getElementsByClassName("square");
 
-let gameon = true;
-let table = $('table tr');
-
-function reportWin(rowNum, colNum) {
-  console.log("You won starting at this row, col");
-  console.log(rowNum);
-  console.log(colNum);
+//Sets value for background color
+for(var j =0; j < square.length; j++){
+	square[j].style.backgroundColor = "white";
 }
 
-function changeColor(rowIndex, colIndex, color) {
-  return table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color', color);
+function diagonal(pColor){
+	//loops through each square in the grid.
+	for(var t = 1;t < 26; t++){
+		//Checks if the square is  on the bottom row
+		if(t == 1 || t == 2 || t == 4 || t ==5){
+			//Checks for the squares in the bottom right
+			if(t == 1 || t == 2){
+				if(document.getElementById(String([t])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 6)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 12)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 18)])).style.backgroundColor == pColor){
+					console.log("win");
+					document.getElementById("message").innerHTML = pColor + " Wins";
+				}
+			}//Checks for the squares in the bottom left
+			else if(t == 4|| t==5){
+				if(document.getElementById(String([t])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 4)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 8)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 12)])).style.backgroundColor == pColor){
+					console.log("win");
+					document.getElementById("message").innerHTML = pColor + " Wins";
+				}
+		}//Checks if the square is  on the top row
+	}else if(t == 21 || t == 22 || t == 24 || t ==25){
+			//Checks for the squares in the top left
+			if(t == 25 || t == 24){
+				if(document.getElementById(String([t])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t - 6)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t - 12)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t - 18)])).style.backgroundColor == pColor){
+					console.log("win");
+					document.getElementById("message").innerHTML = pColor + " Wins";
+				}
+			}//Checks for the squares in the top right
+			else if(t == 21|| t==22){
+				if(document.getElementById(String([t])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t - 4)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t - 8)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t - 12)])).style.backgroundColor == pColor){
+					console.log("win");
+					document.getElementById("message").innerHTML = pColor + " Wins";
+				}
+		}
+	}
+}
+}
+function horizontal(pColor){
+	//loops through each square in the grid.
+	for(var t = 1;t < 26; t++){
+		//Checks if the square is on the left side of the grid
+		if(t%5 == 0){
+				if(document.getElementById(String([t])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t - 1)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t - 2)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t - 3)])).style.backgroundColor == pColor){
+					console.log("win");
+					document.getElementById("message").innerHTML = pColor + " Wins";
+				}
+		}//Checks if the square is on the left side of the grid
+		else if(t%5 == 1){
+			if(document.getElementById(String([t])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 1)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 2)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 3)])).style.backgroundColor == pColor){
+					console.log("win");
+					document.getElementById("message").innerHTML = pColor + " Wins";
+				}
+		}//Checks the bottom row.
+		else if(t == 1){
+			if(document.getElementById(String([t])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 1)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 2)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 3)])).style.backgroundColor == pColor){
+					console.log("win");
+					document.getElementById("message").innerHTML = pColor + " Wins";
+				}
+		}
+}
+}
+function vertical(pColor){
+//loops through each square in the grid.
+for(var t = 1;t < 26; t++)
+	if(t <= 10){
+		//Check if square has a id less than or equal to 10
+		if(document.getElementById(String([t])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 5)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t +  10)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t + 15)])).style.backgroundColor == pColor){
+			console.log("win");
+			document.getElementById("message").innerHTML = pColor + " Wins";
+		}
+	}
+	//Check if square has a id greater than or equal to 15
+	else if(t >=15){
+		if(document.getElementById(String([t])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t - 5)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t -  10)])).style.backgroundColor == pColor && document.getElementById(String([parseInt(t - 15)])).style.backgroundColor == pColor){
+			console.log("win");
+			document.getElementById("message").innerHTML = pColor + " Wins";
+				}
+	}
+}
+function changeColor(id){
+	//Checks for players turn and verifies that the select square is empty
+	if(player1 == true && document.getElementById(id).style.backgroundColor != "red" && document.getElementById(id).style.backgroundColor != "black"){
+	document.getElementById("message").innerHTML = "";
+	pColor = "red";
+	document.getElementById(id).style.backgroundColor = pColor;
+	id.value = "red";
+	vertical(pColor);
+	horizontal(pColor);
+	diagonal(pColor);
+	player1 = false;
+	document.getElementById("turn").innerHTML = "Player 2's Turn";
+	return player1;
 }
 
-function returnColor(rowIndex, colIndex, color) {
-  return  table.eq(rowIndex).find('td').eq(colIndex).find('button').css('background-color');
+	//Checks for players turn and verifies that the select square is empty
+	else if(player1 == false && document.getElementById(id).style.backgroundColor != "black" && document.getElementById(id).style.backgroundColor != "red"){
+	document.getElementById("message").innerHTML = "";
+	pColor="black";
+	document.getElementById(id).style.backgroundColor = pColor;
+	vertical(pColor);
+	horizontal(pColor);
+	diagonal(pColor);
+	player1 = true;
+	document.getElementById("turn").innerHTML = "Player 1's Turn";
+	return player1;
 }
-
-function checkBottom(colIndex) {
-  let colorReport = returnColor(5, colIndex);
-  for (let row = 5; row > -1; row--) {
-    colorReport = returnColor(row, colIndex);
-    if (colorReport === 'rgb(128, 128, 128)') {
-      return row
-    }
-  }
+	else{
+		//Displays message if the selected square has already been selected.
+		document.getElementById("message").innerHTML = "Message: Choose another square!";
+	}
 }
-
-function colorMatchCheck(one, two, three, four) {
-  return (one === two && one === three && one === four && one != 'rgb(128, 128, 128)' && one !== undefined);
-}
-
-function horizontalWinCheck() {
-  for (let row = 0; row < 6; row++) {
-    for (let col = 0; col < 4; col++) {
-      if (colorMatchCheck(returnColor(row, col), returnColor(row, col+1), returnColor(row, col+2), returnColor(row, col+3))) {
-        console.log('horiz');
-        reportWin(row, col);
-        return true;
-      } else {
-        continue;
-      }
-    }
-  }
-}
-
-function verticalWinCheck() {
-  for (let col = 0; col < 7; col++) {
-    for (let row = 0; row < 3; row++) {
-      if (colorMatchCheck(returnColor(row, col), returnColor(row+1, col), returnColor(row+2, col), returnColor(row+3, col))) {
-        console.log('vertical');
-        reportWin(row, col);
-        return true;
-      } else {
-        continue;
-      }
-    }
-  }
-}
-
-function diagonalWinCheck() {
-  for (let col = 0; col < 5; col++) {
-    for (let row = 0; row < 7; row++) {
-      if (colorMatchCheck(returnColor(row, col), returnColor(row-1, col+1), returnColor(row-2, col+2), returnColor(row-3, col+3))) {
-        console.log('diag');
-        reportWin(row, col);
-        return true;
-      } else {
-        continue;
-      }
-    }
-  }
-}
-
-function end(winningPlayer) {
-  for (let col = 0; col < 7; col++) {
-    for (let row = 0; row < 7; row++) {
-      $('h1').text(winningPlayer+" has won! Refresh your browser to play again").css("fontSize", "50px")
-    }
-  }
-}
-
-let currentPlayer = 1;
-let currentName = player1;
-let currentColor = player1Color;
-
-$('h3').text(player1+": it is your turn");
-$('.board button').on('click', function() {
-  let col = $(this).closest("td").index();
-  let bottomAvail = checkBottom(col);
-  changeColor(bottomAvail, col, currentColor);
-
-if (horizontalWinCheck() || verticalWin() || diagonalWinCheck()) {
-  end(currentName);
-
-}
-
-currentPlayer = currentPlayer * -1;
-
-if (currentPlayer === 1) {
-  currentName = player1;
-  $('h3').text(currentName+": it is your turn");
-  currentColr = player1Color;
-} else {
-  currentName = player2;
-  $('h3').text(currentName+": it is your turn");
-  currentColor = player2Color;
-}
-})
