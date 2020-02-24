@@ -1,68 +1,94 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Connect 4</title>
-<link rel="stylesheet" href="css/connectfour.css">
-<script src="js/connectfour.js" defer></script>
-</head>
-<body>
-	<h1 id="turn">Player 1's Turn</h1>
-<div>
-  <span class="square" id="42" value="empty" onClick="changeColor(42)"></span>
-  <span class="square" id="41" value="empty" onClick="changeColor(41)"></span>
-	<span class="square" id="40" value="empty" onClick="changeColor(40)"></span>
-	<span class="square" id="39" value="empty" onClick="changeColor(39)"></span>
-	<span class="square" id="38" value="empty" onClick="changeColor(38)"></span>
-	<span class="square" id="37" value="empty" onClick="changeColor(37)"></span>
-	<span class="square" id="36" value="empty" onClick="changeColor(36)"></span>
-</div>
-<div>
-  <span class="square" id="35" value="empty" onClick="changeColor(35)"></span>
-  <span class="square" id="34" value="empty" onClick="changeColor(34)"></span>
-	<span class="square" id="33" value="empty" onClick="changeColor(33)"></span>
-	<span class="square" id="32" value="empty" onClick="changeColor(32)"></span>
-	<span class="square" id="31" value="empty" onClick="changeColor(31)"></span>
-	<span class="square" id="30" value="empty" onClick="changeColor(30)"></span>
-	<span class="square" id="29" value="empty" onClick="changeColor(29)"></span>
-</div>
-<div>
-  <span class="square" id="28" value="empty" onClick="changeColor(28)"></span>
-  <span class="square" id="27" value="empty" onClick="changeColor(27)"></span>
-	<span class="square" id="26" value="empty" onClick="changeColor(26)"></span>
-	<span class="square" id="25" value="empty" onClick="changeColor(25)"></span>
-	<span class="square" id="24" value="empty" onClick="changeColor(24)"></span>
-	<span class="square" id="23" value="empty" onClick="changeColor(23)"></span>
-	<span class="square" id="22" value="empty" onClick="changeColor(22)"></span>
-</div>
-<div>
-  <span class="square" id="21" value="empty" onClick="changeColor(21)"></span>
-  <span class="square" id="20" value="empty" onClick="changeColor(20)"></span>
-	<span class="square" id="19" value="empty" onClick="changeColor(19)"></span>
-	<span class="square" id="18" value="empty" onClick="changeColor(18)"></span>
-	<span class="square" id="17" value="empty" onClick="changeColor(17)"></span>
-	<span class="square" id="16" value="empty" onClick="changeColor(16)"></span>
-	<span class="square" id="15" value="empty" onClick="changeColor(15)"></span>
-</div>
-<div>
-<span class="square" id="14" value="empty" onClick="changeColor(14)"></span>
-<span class="square" id="13" value="empty" onClick="changeColor(13)"></span>
-<span class="square" id="12" value="empty" onClick="changeColor(12)"></span>
-<span class="square" id="11" value="empty" onClick="changeColor(11)"></span>
-<span class="square" id="10" value="empty" onClick="changeColor(10)"></span>
-<span class="square" id="9" value="empty" onClick="changeColor(9)"></span>
-<span class="square" id="8" value="empty" onClick="changeColor(8)"></span>
-</div>
-	<div>
-  <span class="square" id="7" value="empty" onClick="changeColor(7)"></span>
-  <span class="square" id="6" value="empty" onClick="changeColor(6)"></span>
-	<span class="square" id="5" value="empty" onClick="changeColor(5)"></span>
-	<span class="square" id="4" value="empty" onClick="changeColor(4)"></span>
-	<span class="square" id="3" value="empty" onClick="changeColor(3)"></span>
-	<span class="square" id="2" value="empty" onClick="changeColor(2)"></span>
-	<span class="square" id="1" value="empty" onClick="changeColor(1)"></span>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-</div>
-<h3 id="message"></h3>
-</body>
-</html>
+    <link
+      href="https://fonts.googleapis.com/css?family=Major+Mono+Display"
+      rel="stylesheet"
+    />
+    <link href="css/connectFour.css" rel="stylesheet" type="text/css" />
+    <script defer src="js/connectfour.js"></script>
+
+    <title>APCSP Connect Four!</title>
+  </head>
+  <header>
+    <nav>
+    <ul class = "games">
+      <li><a href = "index.html" > Home </a></li>
+      <li><a href = "tictactoe.html" > Tic Tac Toe </a></li>
+      <li><a href = "brickBreaker.html" > Brick Breaker </a></li>
+    </ul>
+  </nav>
+  </header>
+    <body>
+      <h1> Connect Four </h1>
+      <div class = "first">
+        <h3>Who's Going First?<h3>
+        <button  id = "first_Red">Red</button>
+        <button id = "first_Yellow" >Yellow</button>
+      </div>
+      <div class = "score">
+        <span class="score_Red">Score - Red:<li id = "score_Red"></li></span><span class="score_Yellow">Score - Yellow:<li id = "score_Yellow"></li></span>​
+      </div>
+      <div class="container column">
+      <h2 id="go">Turn: Red</h2>
+
+      <div class= "box">
+        <div class="container wrap" id="board">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+        <div id="reset-button">Play Again!</div>
+        </div>
+      </div>
+    </body>
+    </html>
