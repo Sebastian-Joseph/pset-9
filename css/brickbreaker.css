@@ -2,10 +2,20 @@ body {
   padding: 0; margin: 0;
 }
 canvas {
-  vertical-align: top;
+  position: absolute;
 }
 html {
   font-family: monospace;
   color: #333;
   font-size: 20px;
+}
+
+h3 {
+  border: 10px solid lightgrey;
+  background-color: lightgrey;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }
