@@ -1,6 +1,7 @@
 body {
     text-align:center;
     font-family: "Courier New", Courier, monospace;
+    background-image: url("../images/back3.gif");
 }
 
 button,table,#game,body,td {
