@@ -14,7 +14,7 @@
 	var paddleWidth = 75;
 	var paddleX = (canvas.width-paddleWidth)/2;
 
-	va rightPressed = false;
+	var rightPressed = false;
 	var leftPressed = false;
 
 	var brickRowCount = 3;
