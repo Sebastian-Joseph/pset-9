@@ -3,7 +3,7 @@ body {
     font-family: "Courier New", Courier, monospace;
 }
 
-table,#game,body {
+#game,body {
     margin: 40px auto 0 auto;
     background-image: url("../images/back4.gif");
 }
