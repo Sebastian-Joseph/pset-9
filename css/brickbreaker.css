@@ -1,6 +1,7 @@
 body {
   padding: 0; margin: 0;
   background-image: url("../images/back3.gif");
+  background-size: contain;
   font-family: "Courier New", Courier, monospace;
 }
 canvas {

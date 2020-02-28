@@ -6,6 +6,7 @@ body {
   font-family: "Courier New",Courier, monospace;
   background-image: url("../images/backtwo.gif");
   background-position: center;
+  background-size: contain;
 }
 
 h1 {
