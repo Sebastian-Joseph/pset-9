@@ -1,5 +1,5 @@
 body {
-background-image: url("../images/background.jpg");
+background-image: url("../images/spc.gif");
 font-family: "Courier New", Courier, monospace;
 color: white;
 }
@@ -22,4 +22,8 @@ p {
   border: 5px solid grey;
   background-color: grey;
   text-align: center;
+  font-size: 25px;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
 }
